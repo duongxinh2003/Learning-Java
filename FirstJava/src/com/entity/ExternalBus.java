@@ -7,9 +7,9 @@ public class ExternalBus extends Buses{
 		super();
 	}
 
-	public ExternalBus(int busId, String owner, String route, float price) {
+	public ExternalBus(int busId, String owner, String route, float price, int totalDay) {
 		super(busId, owner, route, price);
-		
+		this.totalDay = totalDay;
 	}
 
 	public int getTotalDay() {
@@ -20,5 +20,9 @@ public class ExternalBus extends Buses{
 		this.totalDay = totalDay;
 	}
 	
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString() + totalDay;
+	}
 }
