@@ -9,7 +9,8 @@ public class ConstructorTest {
 	public static void main(String[] args) {
 		ConstructorTest ct = new ConstructorTest();
 		ct.invoke();
-		new SubClass();
+		SubClass sc = new SubClass();
+		sc.getValue();
 	}
 	
 	private void invoke() {
@@ -30,7 +31,11 @@ class SuperClass {
 class SubClass extends SuperClass {
 	int subVar = 20;
 	public SubClass() {
-		super(20);
+		super(21);
 		System.out.println("Sub var: " + subVar);
+	}
+	
+	void getValue() {
+		System.out.println(subVar);
 	}
 }

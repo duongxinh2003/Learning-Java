@@ -30,6 +30,7 @@ public class InitialTest {
 	//Relational operators: < <= > >= == !=
 	private static void c(int a, int b) {
 		a=a+1;
+		System.out.println(a);
 		if(a < b) {
 			System.out.println("a < b");
 		}
