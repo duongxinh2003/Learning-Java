@@ -1,6 +1,6 @@
 package com.entity;
 
-public class ExternalBus extends Buses{
+public final class ExternalBus extends Buses{
 	private int totalDay;
 	
 	public ExternalBus() {

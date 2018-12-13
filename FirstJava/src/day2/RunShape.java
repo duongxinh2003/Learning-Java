@@ -25,6 +25,7 @@ abstract class Shape {
 	void print() {
 		System.out.println("This is abstract class");
 	}
+	
 }
 class Rectangle extends Shape {
 
@@ -40,6 +41,7 @@ class Rectangle extends Shape {
 	void run() {
 		System.out.println("Start rectangle");
 	}
+	
 }
 class Circle extends Shape {
 
