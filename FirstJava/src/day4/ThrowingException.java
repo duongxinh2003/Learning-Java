@@ -1,5 +1,7 @@
 package day4;
 
+import java.io.IOException;
+
 public class ThrowingException {
 	public static void main(String[] args) {
 		float x = 10;
@@ -20,4 +22,11 @@ public class ThrowingException {
 			return x/y;
 	}
 	
+	void callingMethod() throws IOException {
+		callMethod();
+	}
+	
+	void callMethod() throws IOException {
+		throw new IOException();
+	}
 }

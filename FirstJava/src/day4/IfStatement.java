@@ -21,6 +21,7 @@ public class IfStatement {
 					System.out.println("Vo so nghiem");
 			} else {
 				System.out.println("Nghiem = " + (-c / b));
+				return;
 			}
 		} else {
 			int delta = b * b - 4 * a * c;
