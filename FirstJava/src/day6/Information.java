@@ -2,7 +2,11 @@ package day6;
 
 import java.io.Serializable;
 
-public class Information implements Serializable{
+public class Information implements Serializable, Cloneable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
 	private double score;
@@ -55,5 +59,8 @@ public class Information implements Serializable{
 		this.gender = gender;
 	}
 	
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
 	
 }
