@@ -59,8 +59,10 @@ public class Collections {
 		hashTable.put(33, "K");
 		hashTable.put(16, "M");
 		hashTable.put(29, "G");
+		hashTable.put(9, "1");
 		hashTable.put(81, "B");
 		hashTable.put(70, "J");
+		hashTable.put(8, "9");
 		hashTable.put(16, "C");
 		hashTable.put(25, "A");
 		System.out.println("HashTable: " + hashTable);

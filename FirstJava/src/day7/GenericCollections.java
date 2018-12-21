@@ -28,7 +28,11 @@ public class GenericCollections {
 //		List<? extends Object> objects = list2;
 		parentStudents.add(new Student<Integer, Double>(1,22.3));
 //		list2.add(new Object());
-		
+		setData(list2);
+	}
+	
+	public static <T> void setData(List<T> i) {
+		i.set(0, i.get(0));
 	}
 }
 class Student<K extends Object, V> {
@@ -52,6 +56,5 @@ class Student<K extends Object, V> {
 	public void setName(V name) {
 		this.name = name;
 	}
-	
 	
 }
