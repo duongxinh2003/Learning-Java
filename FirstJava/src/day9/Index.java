@@ -1,10 +1,13 @@
 package day9;
 
 public class Index {
-	private int index;
+	private int index = 0;
 
 	public Index() {
-		this.index = 0;
+	}
+
+	public Index(int index) {
+		this.index = index;
 	}
 
 	public synchronized int getIndex() {
@@ -14,10 +17,4 @@ public class Index {
 	public synchronized void setIndex() {
 		this.index =index +1;
 	}
-	
-//	public static int index = 0;
-//	
-//	public static int getIndex() {
-//		return index++;
-//	}
 }
