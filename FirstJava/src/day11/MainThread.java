@@ -5,15 +5,11 @@ import java.util.ArrayList;
 
 public class MainThread {
 	public static void main(String[] args) throws ParseException, InterruptedException {
+		Information information = new Information();
 		IOThread ioThread = new IOThread();
 		RandomData randomData = new RandomData();
-		Thread randomThread = new Thread(randomData);
-		randomThread.start();
-		ioThread.createThreads();
+		randomData.runRandom(information);
+		ioThread.createThreads(information);
 		
-
-//		do {
-//			informations.add(randomData.randomInformation());
-//		} while (((System.currentTimeMillis()-start)/1000)<=3);
 	}
 }

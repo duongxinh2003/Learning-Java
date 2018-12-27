@@ -19,42 +19,42 @@ public class Information {
 		this.phone = phone;
 	}
 
-	public long getId() {
+	public synchronized long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public synchronized void setId(long id) {
 		this.id = id;
 	}
 
-	public Date getDate() {
+	public synchronized Date getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public synchronized void setDate(Date date) {
 		this.date = date;
 	}
 
-	public byte getGender() {
+	public synchronized byte getGender() {
 		return gender;
 	}
 
-	public void setGender(byte gender) {
+	public synchronized void setGender(byte gender) {
 		this.gender = gender;
 	}
 
-	public String getPhone() {
+	public synchronized String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
+	public synchronized void setPhone(String phone) {
 		this.phone = phone;
 	}
 
 	@Override
-	public String toString() {
+	public synchronized String toString() {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		return "id=" + id + ", date=" + simpleDateFormat.format(date) + ", gender=" + (gender==0?"Male":"Female") + ", phone=" + phone +"\n";
+		return "id=" + id + ", date=" + simpleDateFormat.format(date) + ", gender=" + (gender==0?"Male":"Female") + ", phone=" + phone+System.getProperty("line.separator");
 	}
 
 	
