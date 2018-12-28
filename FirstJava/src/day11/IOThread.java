@@ -5,9 +5,17 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+import test.MyData;
+
 public class IOThread {
+	
+	public MyList myList;
 	public InputFile input = new InputFile();
 
+	public IOThread(MyList myList) {
+		this.myList = myList;
+	}
+	
 	public void writeFile(ArrayList<Information> list) {
 		try {
 			String inputPath = input.createFile();
@@ -24,39 +32,26 @@ public class IOThread {
 		}
 	}
 
-	public void createThreads(Information information) {
+	public void createThreads() {
 		for (int i = 0; i < 3; i++) {
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
-						synchronized (RandomData.class) {					
-					ArrayList<Information> list = new ArrayList<>();
-					while (true) {
-							if (list.add(information) == true) {
-								int length = list.size();
-								if (length == 1000) {
-//									synchronized (input) {
-										writeFile(list);
-										list.removeAll(list);
-//									}
-								}
-							} else {
-								while (list.add(information) == false) {
-									try {
-										wait(10000);
-										if (list.add(information) == false) {
-//											synchronized (input) {
-												writeFile(list);
-												list.removeAll(list);
-												notifyAll();
-//											}
-										}
-									} catch (InterruptedException e) {
-										e.printStackTrace();
-									}
-								}
+					synchronized (myList) {
+						ArrayList<Information> data = myList.getMyList();
+						while (data.size() == 0 || data.size() < 900) {
+							try {
+//								System.out.println("Here");
+								myList.wait(10000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
 							}
 						}
+						System.out.println(Thread.currentThread().getName()+ " "+ data.toString());
+						writeFile(data);
+						data.removeAll(data);
+						myList.notify();
 					}
 				}
 			}).start();
