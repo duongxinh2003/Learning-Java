@@ -1,4 +1,4 @@
-package com.blockingqueue;
+package com.solution2;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
