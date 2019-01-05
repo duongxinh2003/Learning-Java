@@ -36,8 +36,8 @@ public class PrintFile implements Runnable {
 				if(tempMap != null) {
 					ArrayList<Entry<Integer, ArrayList<String>>> entry = new ArrayList<>(tempMap.entrySet());
 					Entry<Integer, ArrayList<String>> last = entry.get(entry.size()-1);
-//					System.out.println(Thread.currentThread().getName() + " Key is: " + last.getKey());
-//					System.out.println(Thread.currentThread().getName() + " Value is: " + last.getValue());
+					System.out.println(Thread.currentThread().getName() + " Key is: " + last.getKey());
+					System.out.println(Thread.currentThread().getName() + " Value is: " + last.getValue());
 					System.out.println(last.getKey() + " Size is: " + last.getValue().size());
 					 String fileName = "src\\com\\project\\data\\" + String.format("%03d_", last.getKey())+ random.randomBetween(10000L, 1000L) + ".txt";
 		                try {
