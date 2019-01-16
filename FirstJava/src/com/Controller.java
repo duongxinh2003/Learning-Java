@@ -1,4 +1,4 @@
-package com.solution3;
+package com;
 
 import java.io.BufferedWriter;
 import java.io.File;

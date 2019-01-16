@@ -1,4 +1,4 @@
-package com.solution3;
+package com;
 
 import java.util.ArrayList;
 import java.util.concurrent.BlockingQueue;
