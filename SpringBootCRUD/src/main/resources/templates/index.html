@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<meta charset="ISO-8859-1">
+<title>User List Page</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Manage User</h1>
+		<form th:object="${user}" th:action="@{search?name=${name}}" action="#"
+			method="GET">
+			<input type="text" name="name"/>
+			<button type="submit" class="btnSave" value="Search">Search</button>
+		</form>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Actions</th>
+			</tr>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.phone}"></td>
+				<td><a th:href="@{/edit?id={id}(id=${user.id})}">Edit</a> <a
+					th:href="@{/delete?id={id}(id=${user.id})}">Delete</a></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="4"><a href="/add">Add User</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
