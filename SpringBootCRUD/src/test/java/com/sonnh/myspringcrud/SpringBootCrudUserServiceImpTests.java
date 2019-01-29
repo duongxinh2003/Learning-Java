@@ -11,6 +11,7 @@ import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -72,13 +73,9 @@ public class SpringBootCrudUserServiceImpTests {
 	@Test
 	public void whenFindUserById_thenReturnOptionalUser() {
 		Optional<User> actual = userServiceImpl.findUserById(new Long(1));
-		assertTrue(actual.isPresent());
-	}
-	
-	@Test
-	public void whenFindUserById_butNullParameter() {
-		Optional<User> actual = userServiceImpl.findUserById(null);
-		assertNull(actual);
+		User expected = Mockito.mock(User.class);
+		Mockito.when(expected.getName()).thenReturn("NvA");
+		assertEquals(expected.getName(), actual.get().getName());
 	}
 }
 

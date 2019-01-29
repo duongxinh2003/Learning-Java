@@ -8,7 +8,13 @@
 <body>
 	<h1>Result</h1>
 	<div th:if="${users} != null">
-		<table>
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
 			<tr th:each="user : ${users}">
 				<td th:text="${user.id}"></td>
 				<td th:text="${user.name}"></td>
