@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns =  "http://www.springframework.org/schema/beans"
+		xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <bean id = "schoolFPT" class="com.learning.demo.School">
+   		<property name="schoolId" value="132"/>
+   		<property name="schoolName" value="FPTU"/>
+   		<property name="studentList">
+   			<list>
+   				<ref bean="student1"/>
+   				<ref bean="student2"/>
+   				<ref bean="student3"/>
+   			</list>
+   		</property>
+   </bean>
+   
+   <bean id="student1" class="com.learning.demo.Student">
+   		<property name="studentNo" value="1"></property>
+   		<property name="id" value="03996"></property>
+   		<property name="name" value="Nguyen Hong Son"></property>
+   		<property name="gender" value="Male"></property>
+   		<property name="className" value="IS1010"></property>
+   </bean>
+   <bean id="student2" class="com.learning.demo.Student">
+   		<property name="studentNo" value="2"></property>
+   		<property name="id" value="48646"></property>
+   		<property name="name" value="Nguyen Van A"></property>
+   		<property name="gender" value="Male"></property>
+   		<property name="className" value="ISE1534"></property>
+   </bean>
+   <bean id="student3" class="com.learning.demo.Student">
+   		<property name="studentNo" value="3"></property>
+   		<property name="id" value="9853"></property>
+   		<property name="name" value="Huyen Trang"></property>
+   		<property name="gender" value="Female"></property>
+   		<property name="className" value="IA1034"></property>
+   </bean>
+   
+</beans>

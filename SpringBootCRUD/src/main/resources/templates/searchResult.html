@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search</title>
+</head>
+<body>
+	<h1>Result</h1>
+	<div th:if="${users} != null">
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.phone}"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
