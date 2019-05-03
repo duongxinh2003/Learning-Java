@@ -1,0 +1,28 @@
+{
+  "bus-seat-type-a" : {
+    "mappings" : {
+      "bus-seat-type" : {
+        "properties" : {
+          "seatTypeId" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "seatTypeName" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
